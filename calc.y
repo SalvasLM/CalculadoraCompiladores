@@ -5,12 +5,14 @@
     void yyerror(char *s);
 %}
 
-%token NUMBER CONTA POWER AND OR XOR SHIFT_LEFT SHIFT_RIGHT NOT
+%token NUMBER CONTA POWER AND OR XOR SHIFT_LEFT SHIFT_RIGHT NOT INCREMENT DECREMENT
 
 %start INICIO
 %left '+' '-'
 %left '*' '/'
 %right POWER
+%right INCREMENT
+%right DECREMENT
 %left AND
 %left XOR
 %left OR
@@ -85,6 +87,16 @@
         | NUMBER
         {
             $$ = $1;
+        }
+
+        | Expr INCREMENT
+        {
+            $$ = $1 + 1;
+        }
+
+        | Expr DECREMENT
+        {
+            $$ = $1 - 1;
         }
     ;
 %%

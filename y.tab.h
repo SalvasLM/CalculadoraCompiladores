@@ -47,7 +47,9 @@
      XOR = 263,
      SHIFT_LEFT = 264,
      SHIFT_RIGHT = 265,
-     NOT = 266
+     NOT = 266,
+     INCREMENT = 267,
+     DECREMENT = 268
    };
 #endif
 /* Tokens.  */
@@ -60,6 +62,8 @@
 #define SHIFT_LEFT 264
 #define SHIFT_RIGHT 265
 #define NOT 266
+#define INCREMENT 267
+#define DECREMENT 268
 
 
 
